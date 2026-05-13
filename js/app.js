@@ -6,7 +6,7 @@ const menuItems = document.querySelectorAll(".menu-items");
 const btn = document.querySelectorAll(".btn-cta");
 const flyer = document.querySelector(".flyer");
 const flyerContainer = document.querySelector(".flyer-container")
-
+const heroHours = document.querySelector(".hero-hours");
 
 
 
@@ -115,8 +115,10 @@ const renderMenu = () => {
 
     if (modeBody === "lunch") {
         menuAttivo = menuLunch;
+        heroHours.textContent = "Orario Apertura : da 12:00 Alle 15:00";
     } else {
         menuAttivo = menuDinner;
+        heroHours.textContent = "Orario Apertura : dalle 19:30 Alle 23:30";
     }
 
 
