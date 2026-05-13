@@ -1,0 +1,172 @@
+console.log("collegato");
+
+const categoryCard = document.querySelectorAll(".category-card");
+const categoryHeader = document.querySelectorAll(".category-header");
+const menuItems = document.querySelectorAll(".menu-items");
+const btn = document.querySelectorAll(".btn-cta");
+const flyer = document.querySelector(".flyer");
+const flyerContainer = document.querySelector(".flyer-container")
+
+
+
+
+/* DISH PRELOADER*/
+const preloader = document.querySelector(".wrapper-ingredients");
+const lastIngredient = document.querySelector(".basil");
+
+
+let pageReady = false;
+
+let animationReady = false;
+
+window.addEventListener("load", () => {
+    pageReady = true;
+    closeAnimation();
+})
+
+lastIngredient.addEventListener("animationend", () => {
+
+    animationReady = true;
+    closeAnimation();
+
+}, { once: true })
+
+const closeAnimation = () => {
+    if (pageReady && animationReady) {
+        preloader.classList.add("is-invisible");
+
+
+        preloader.addEventListener("transitionend", () => {
+            preloader.style.display = "none";
+
+            flyer.classList.add("is-visible");
+            blockScroll();
+
+            /*  document.body.classList.add("unlockScroll"); */
+        }, { once: true })
+    }
+
+}
+
+const blockScroll = () => {
+    flyer.addEventListener("transitionend", () => {
+        document.body.style.overflow = "auto";
+    })
+}
+
+/* DISH END*/
+
+/* Click Cambio modalita */
+const selectMode = (e) => {
+
+    e.preventDefault();
+
+
+    const selectMenu = e.target;
+    const bodyMode = document.body;
+    const twinsBtn = selectMenu.dataset.modebtn;
+    bodyMode.dataset.mode = twinsBtn;
+
+
+    renderMenu();
+}
+
+
+btn.forEach(bt => bt.addEventListener("click", selectMode));
+
+/* Apertura delle Card */
+
+categoryHeader.forEach(header => {
+
+
+    header.addEventListener("click", () => {
+
+
+
+        const clickCard = header.closest(".category-card");
+
+
+        if (clickCard.classList.contains("is-open")) {
+            clickCard.classList.remove("is-open");
+        } else {
+            clickCard.classList.add("is-open");
+        }
+
+
+
+        categoryCard.forEach(card => {
+
+            if (clickCard !== card) {
+                card.classList.remove("is-open");
+            }
+        })
+    })
+
+});
+
+/* Stampo nel html */
+
+let menuAttivo = null;
+
+
+const renderMenu = () => {
+
+    const modeBody = document.body.dataset.mode;
+
+    if (modeBody === "lunch") {
+        menuAttivo = menuLunch;
+    } else {
+        menuAttivo = menuDinner;
+    }
+
+
+    categoryCard.forEach(onlyCard => {
+
+
+        const categoriesCard = onlyCard.dataset.category;
+
+        const writeHeader = onlyCard.querySelector(".category-header");
+        const items = onlyCard.querySelector(".menu-items");
+
+        const foundCategory = menuAttivo.find(f => f.id === categoriesCard);
+
+        const writeCategory = `
+                            <h4>${foundCategory.categoria}</h4>
+                            <i class="fa-solid fa-chevron-down"></i>
+                        `
+
+        writeHeader.innerHTML = writeCategory;
+
+
+        const foundCard = menuAttivo.find(m => m.id === categoriesCard);
+
+
+        const foundDish = foundCard.piatti;
+
+
+        const writeDish = foundDish.map((d, index, array) => `
+                    
+                                <div class="item-header">
+                                    <span>${d.nome}</span> 
+                                    <span>${d.prezzo}</span>
+                                </div>
+                                <div class="item-description">
+                                    <p>${d.descrizione}</p>
+                                </div>     
+                               ${index !== array.length - 1 ? `<span class="menu-divider"></span>` : ''}
+                                              
+            `).join("");
+
+        items.innerHTML = writeDish;
+    })
+}
+
+
+
+document.addEventListener("DOMContentLoaded", () => {
+
+    history.scrollRestoration = "manual";
+    window.scrollTo(0, 0);
+
+    renderMenu();
+})
