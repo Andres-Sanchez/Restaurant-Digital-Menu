@@ -1,4 +1,8 @@
-console.log("collegato");
+/*
+Restaurant Digital Menu
+Author: Andres Sanchez
+Application Logic
+*/
 
 const categoryCard = document.querySelectorAll(".category-card");
 const categoryHeader = document.querySelectorAll(".category-header");
@@ -85,13 +89,7 @@ categoryHeader.forEach(header => {
 
         const clickCard = header.closest(".category-card");
 
-
-        if (clickCard.classList.contains("is-open")) {
-            clickCard.classList.remove("is-open");
-        } else {
-            clickCard.classList.add("is-open");
-        }
-
+        clickCard.classList.toggle("is-open");
 
 
         categoryCard.forEach(card => {
@@ -130,17 +128,14 @@ const renderMenu = () => {
         const writeHeader = onlyCard.querySelector(".category-header");
         const items = onlyCard.querySelector(".menu-items");
 
-        const foundCategory = menuAttivo.find(f => f.id === categoriesCard);
+        const foundCard = menuAttivo.find(m => m.id === categoriesCard);
 
         const writeCategory = `
-                            <h4>${foundCategory.categoria}</h4>
+                            <h4>${foundCard.categoria}</h4>
                             <i class="fa-solid fa-chevron-down"></i>
                         `
 
         writeHeader.innerHTML = writeCategory;
-
-
-        const foundCard = menuAttivo.find(m => m.id === categoriesCard);
 
 
         const foundDish = foundCard.piatti;
@@ -150,7 +145,7 @@ const renderMenu = () => {
                     
                                 <div class="item-header">
                                     <span>${d.nome}</span> 
-                                    <span>${d.prezzo}</span>
+                                    <span>${d.prezzo}€</span>
                                 </div>
                                 <div class="item-description">
                                     <p>${d.descrizione}</p>

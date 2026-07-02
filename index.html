@@ -1,15 +1,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
-    <meta name="description" content="Flyer">
-    <meta name="Author" content="Andres Sanchez">
+    <title>Restaurant Digital Menu</title>
+    <meta name="description"
+        content="Responsive digital restaurant menu built with HTML, CSS and JavaScript featuring animated preloader, lunch and dinner menus and modern UI.">
+    <meta name="author" content="Andres Sanchez">
     <meta name="Copyright" content="Copyright Sanchez">
-
-    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
-    <meta http-equiv="Pragma" content="no-cache">
-    <meta http-equiv="Expires" content="0">
-
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
@@ -60,7 +56,7 @@
             <header class="flyer-hero">
 
                 <div class="hero-container">
-                    <img src="img/icon-icons.svg" alt="fork knife">
+                    <img src="img/icon-icons.svg" alt="" aria-hidden="true">
                     <p class="hero-hours"></p>
                 </div>
 
@@ -69,8 +65,8 @@
                     <span>Descrivi il tipo di cucina</span>
                 </div>
                 <div class="container-btn">
-                    <button class="btn-cta" data-modebtn="lunch">Pranzo</button>
-                    <button class="btn-cta" data-modebtn="dinner">Cena</button>
+                    <button type="button" class="btn-cta" data-modebtn="lunch">Pranzo</button>
+                    <button type="button" class="btn-cta" data-modebtn="dinner">Cena</button>
                 </div>
             </header>
 
@@ -350,11 +346,11 @@
                 </div>
                 <div class="container-img">
                     <figure>
-                        <img src="img/restaurant2.jpg" alt="">
+                        <img src="img/restaurant2.jpg" alt="Restaurant's indoor dining room" loading="lazy">
                         <figcaption>interno</figcaption>
                     </figure>
                     <figure>
-                        <img src="img/restaurant.jpg" alt="">
+                        <img src="img/restaurant.jpg" alt="Outdoor dining area of ​​the restaurant" loading="lazy">
                         <figcaption>esterno</figcaption>
                     </figure>
                 </div>
@@ -363,14 +359,19 @@
             <footer class="flyer-footer">
                 <div class="contacts-container">
                     <a href="tel:+393772587600">+39 3772587600</a>
-                    <a href="mailto:">emailristorante@example.com</a>
+                    <a href="mailto:emailristorante@example.com">emailristorante@example.com</a>
                     <a href="#">sito web</a>
 
                     <div class="social-container">
-                        <a href="https://wa.me/+393772587600"><i class="fa-brands fa-whatsapp"></i></a>
-                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                        <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        <a target="_blank" rel="noopener noreferrer" aria-label="Whatsapp"
+                            href="https://wa.me/+393772587600"><i aria-hidden="true"
+                                class="fa-brands fa-whatsapp"></i></a>
+                        <a href="https://www.instagram.com/andres_._sanchez" target="_blank" rel="noopener noreferrer"
+                            aria-label="Instagram"><i aria-hidden="true" class="fa-brands fa-instagram"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><i
+                                aria-hidden="true" class="fa-brands fa-facebook"></i></a>
+                        <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter"><i aria-hidden="true"
+                                class="fa-brands fa-twitter"></i></a>
                     </div>
 
                 </div>

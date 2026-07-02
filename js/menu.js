@@ -172,7 +172,7 @@ let menuDinner = [
             {
                 nome: "Pollo al curry",
                 prezzo: 12,
-                descrizione: `"Bocconcini di pollo tenero saltati con spezie curry, sfumati con crema allo yogurt e serviti con riso basmati profumato.`
+                descrizione: `Bocconcini di pollo tenero saltati con spezie curry, sfumati con crema allo yogurt e serviti con riso basmati profumato.`
             },
             {
                 nome: "Spezzatino di manzo",

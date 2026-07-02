@@ -1,7 +1,25 @@
+/*
+------------------------------------
+Restaurant Digital Menu
+Author: Andres Sanchez
+Technologies: HTML CSS JavaScript
+Version: 1.0
+------------------------------------
+*/
+
 @charset "UTF-8";
 
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+@media (prefers-reduced-motion: reduce) {
+
+    * {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+}
 
 /* DISH */
 
@@ -670,12 +688,15 @@ li {
     padding: var(--btn-padding-sm);
     border-radius: var(--btn-border-sm);
     border: 1px solid var(--bg-color);
-    outline: none;
     color: #f5f5dc;
     font-family: var(--font-base);
     background-color: transparent;
     transition: color, border, background-color var(--transition-normal);
     cursor: pointer;
+}
+
+.btn-cta:focus-visible {
+    outline: 1px solid;
 }
 
 body[data-mode="lunch"] .btn-cta[data-modebtn="lunch"] {
@@ -742,7 +763,7 @@ body[data-mode="dinner"] .btn-cta[data-modebtn="lunch"] {
 }
 
 
-.category-card:hover {
+.category-card:hover:focus-visible {
     border: 1px solid rgba(63, 59, 59, 0.3);
 
 }
@@ -888,6 +909,34 @@ figcaption {
 
 /* footer sezione commenti End*/
 
+
+/* Error Page */
+
+
+.error-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+    padding: 2rem;
+}
+
+.error-page h1 {
+    font-size: 5rem;
+    color: var(--text-color);
+}
+
+.error-page p {
+    max-width: 450px;
+}
+
+.error-page .btn-cta {
+    background-color: var(--text-color);
+    font-size: var(--fs-md);
+}
 
 /* Tablet */
 
