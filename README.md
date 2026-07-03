@@ -16,7 +16,7 @@ Unlike a traditional PDF menu, this template offers an interactive and responsiv
 
 ## 🚀 Live Demo
 
-Coming Soon
+https://menu.andressdev.com/
 
 ---
 
