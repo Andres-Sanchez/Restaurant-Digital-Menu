@@ -113,10 +113,10 @@ const renderMenu = () => {
 
     if (modeBody === "lunch") {
         menuAttivo = menuLunch;
-        heroHours.textContent = "Orario Apertura : da 12:00 Alle 15:00";
+        heroHours.textContent = "Orario Apertura : 12-15";
     } else {
         menuAttivo = menuDinner;
-        heroHours.textContent = "Orario Apertura : dalle 19:30 Alle 23:30";
+        heroHours.textContent = "Orario Apertura : 19-23";
     }
 
 
