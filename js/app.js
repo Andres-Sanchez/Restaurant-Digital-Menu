@@ -167,3 +167,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     renderMenu();
 })
+
+/* theme color head */
+
+const themeMeta = document.querySelector('#theme-color-meta');
+
+if (mode === 'lunch') {
+    themeMeta.setAttribute('content', '#F4E4BC');
+} else {
+    themeMeta.setAttribute('content', '#111');
+}
