@@ -111,6 +111,8 @@ Frontend Developer
 
 ## 📄 License
 
-This project was designed as part of my frontend development portfolio to showcase responsive web design, JavaScript programming and modern UI implementation.
+This project is licensed under a custom proprietary license.
 
-Feel free to explore the code and use it as inspiration.
+It is available for personal viewing, educational purposes and portfolio evaluation only.
+
+Please refer to the [LICENSE](LICENSE) file for the complete license terms.
