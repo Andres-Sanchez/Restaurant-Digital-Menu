@@ -175,9 +175,9 @@ document.addEventListener("DOMContentLoaded", () => {
 const themeMeta = document.querySelector('#theme-color-meta');
 
 const ThemeHead = () => {
+    const mode = document.body.dataset.mode;
 
-
-    if (modeBody === 'lunch') {
+    if (mode === 'lunch') {
         themeMeta.setAttribute('content', '#F4E4BC');
     } else {
         themeMeta.setAttribute('content', '#111');
