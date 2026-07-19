@@ -156,6 +156,7 @@ const renderMenu = () => {
 
         items.innerHTML = writeDish;
     })
+    ThemeHead();
 }
 
 
@@ -166,14 +167,19 @@ document.addEventListener("DOMContentLoaded", () => {
     window.scrollTo(0, 0);
 
     renderMenu();
+
 })
 
 /* theme color head */
 
 const themeMeta = document.querySelector('#theme-color-meta');
 
-if (mode === 'lunch') {
-    themeMeta.setAttribute('content', '#F4E4BC');
-} else {
-    themeMeta.setAttribute('content', '#111');
+const ThemeHead = () => {
+
+
+    if (modeBody === 'lunch') {
+        themeMeta.setAttribute('content', '#F4E4BC');
+    } else {
+        themeMeta.setAttribute('content', '#111');
+    }
 }
